@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# macOS / editor noise
+.DS_Store
+.vscode/
+.idea/
+
+# Environment / secrets
+.env
+.env.*
+
+# YOLO / training artifacts
+runs/
+wandb/
+*.pt
+*.onnx
+*.engine
+*.torchscript
+*.tflite
+
+# Caches / logs
+*.cache
+.cache/
+*.log
+
+# Dataset
+dataset/
