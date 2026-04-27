@@ -42,3 +42,5 @@ dataset_final/
 
 # Training artifacts
 artifacts/
+
+testing/

@@ -1,0 +1,28 @@
+first test
+
+python3 train.py --train --model yolov8s.pt --epochs 100 --imgsz 768 --batch 16 --workers 8 --patience 15 --name m4pro_trial_v2
+
+
+
+next test 8/26:
+
+python train.py --train --model yolov8n.pt --epochs 120 --patience 30 --imgsz 640 --batch 8 --workers 4 --seed 42 --project runs/pole_tower --name m4pro_trial_v3_opt1
+This keeps your best-performing base setup (yolov8n, 640, batch 8) and gives it a longer runway with more patience.
+
+
+resume command:
+yolo task=detect mode=train resume=True model="runs/pole_tower/m4pro_trial_v1/weights/last.pt"
+
+
+test:
+python3 testing/annotate_single_image.py \
+  --image "/Users/bry/_Documents/Projects/CFG/HOT_Training/dataset_final/roboflow_raw_yolo8_format_folders/bryan_annotated_both.yolov8/train/images/bryan_tower_1156_jpg.rf.PQki9nn2JUaN7aqIgO54.jpg" \
+  --model "runs/detect/runs/pole_tower/m4pro_trial_v1/weights/best.pt"
+
+
+test a folder:
+python3 testing/annotate_single_image.py \
+  --folder "/Users/bry/_Documents/Projects/CFG/HOT_Training/dataset_final/roboflow_raw_yolo8_format_folders/bryan_annotated_both.yolov8/train/images/" \
+  --model "/Users/bry/_Documents/Projects/CFG/HOT_Training/runs/detect/runs/pole_tower/m4pro_trial_v1/weights/best.pt" \
+  --device mps \
+  --present-each
